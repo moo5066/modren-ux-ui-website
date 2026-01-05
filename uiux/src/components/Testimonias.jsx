@@ -1,0 +1,74 @@
+const testi=[
+    {
+        name:"Moo Golay",
+        role:"senior, devloper",
+        image:"IMG_0783.JPEG",
+        content:"This AI-powred devlopment platform ha revolutionzed how we write code.The intellegent suggestion save us hours every day.",
+
+    },
+    {
+        name:"Abdla Golay",
+        role:"Tech, lead",
+        image:"IMG_0783.JPEG",
+        content:"The automed testing and debigging featires are game-changers .",
+
+    },
+    {
+        name:"Isma Golay",
+        role:"CTO",
+        image:"IMG_0783.JPEG",
+        content:"This AI-powred devlopment platform ha revolutionzed how we write code.The intellegent suggestion save us hours every day.",
+
+    }
+]
+
+
+
+export default function Testimonials(){
+    return(
+         <section id="testimonials" className="py-16 sm:py-20 px-10 sm:px-6 lg:px-8 relative">
+  <div className="max-w-6xl mx-auto">
+<div className="flex flex-col lg:flex-row items-start gap-8 sm:gap-12 lg:gap-16 ">
+    {/* left side header */}
+                <div className="lg:w-1/2 w-full">
+                    <h2 className="text-5xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
+                    what developers are saying about us 
+                    </h2>
+                    <p className="text-gray-400 text-base text-xl sm:text-lg max-w-2xl mx-auto">
+                        Choose the plan that best fits your needs. No hidden fees, include a 14 days free trail cancel anytime.
+                    </p>
+                </div>
+
+                {/* right side testi */}
+                <div className="lg:w-1/2 w-full">
+                <div className="space-y-6 sm:space-y-8">
+                    {testi.map((testi,key)=>(
+                <div key={key} className="bg-slate-900/50 p-4 sm:p-6 backdrop-blur-sm border border-slate-800 rounded-xl sm:rounded-2xl">
+                    <div className="flex items-start space-x-3 sm:space-x-4">
+<div className="flex-shrink-0 ">
+<div className="text-2xl sm:text-3xl lg:text-4xl font-bold 
+bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+    "
+</div>
+</div>
+<div className="flex-grow ">
+    <p className="text-white text-base sm:text-lg leading-relaxed mb-3 sm:mb-4 ">{testi.content}</p>
+    <div className="flex items-center space-x-2 sm:space-x-3"></div>
+    <div><img src={testi.image} alt={testi.name} className="w-10 h-10 sm:w-12 h-12 rounded-full object cover"/>
+    <div>
+        <h4 className="font-semibold text-white text-sm sm:text-base">{testi.name}</h4>
+        <p className="text-xs sm:text-sm  text-gray-400 ">{testi.role}</p>
+        
+    </div>
+    </div>
+</div>
+                    </div>
+                </div>
+                    ))}
+                </div>
+                </div>
+                </div>
+                </div>
+</section>
+    )
+}
